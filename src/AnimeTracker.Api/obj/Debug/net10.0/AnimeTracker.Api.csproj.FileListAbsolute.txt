@@ -148,3 +148,11 @@
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/bin/Debug/net10.0/Scalar.AspNetCore.dll
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/AnimeTracker.Api.sourcelink.json
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/bin/Debug/net10.0/AnimeTracker.Api.staticwebassets.runtime.json
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/wt7d0q23de-{0}-xgd3wgl6dw-xgd3wgl6dw.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/wddbefg4pg-{0}-bp3j7o6tak-bp3j7o6tak.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/w5ejehcvjh-{0}-yck127nl4k-yck127nl4k.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/42z5lp7nxp-{0}-8hfn7766j8-8hfn7766j8.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/gf9796987u-{0}-jw84wam7it-jw84wam7it.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/zii027s2dj-{0}-hac4zru2bw-hac4zru2bw.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/eh80gw022l-{0}-c9j39mwt1v-c9j39mwt1v.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/f3y9xbn7s3-{0}-gr9lgpdpvz-gr9lgpdpvz.gz
