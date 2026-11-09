@@ -146,3 +146,4 @@
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/bin/Debug/net10.0/Microsoft.OpenApi.dll
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/bin/Debug/net10.0/Scalar.AspNetCore.dll
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/AnimeTracker.Api.sourcelink.json

@@ -1,6 +1,7 @@
 using AnimeTracker.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using AnimeTracker.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ Directory.CreateDirectory(Path.GetDirectoryName(dbPath)!);
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite($"Data Source={dbPath}"));
 
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<OrderingService>();
+builder.Services.AddScoped<StatsService>();
 
 var app = builder.Build();
 
