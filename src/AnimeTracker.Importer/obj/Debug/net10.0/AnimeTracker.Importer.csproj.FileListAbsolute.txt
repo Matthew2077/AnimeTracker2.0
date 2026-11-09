@@ -1,0 +1,14 @@
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/bin/Debug/net10.0/AnimeTracker.Importer
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/bin/Debug/net10.0/AnimeTracker.Importer.deps.json
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/bin/Debug/net10.0/AnimeTracker.Importer.runtimeconfig.json
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/bin/Debug/net10.0/AnimeTracker.Importer.dll
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/bin/Debug/net10.0/AnimeTracker.Importer.pdb
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.GeneratedMSBuildEditorConfig.editorconfig
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.AssemblyInfoInputs.cache
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.AssemblyInfo.cs
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.csproj.CoreCompileInputs.cache
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.dll
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/refint/AnimeTracker.Importer.dll
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.pdb
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.genruntimeconfig.cache
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/ref/AnimeTracker.Importer.dll
