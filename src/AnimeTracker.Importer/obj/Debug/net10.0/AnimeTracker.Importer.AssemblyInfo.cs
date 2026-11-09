@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimeTracker.Importer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1abd351d83fa1a6f622a40e415120a1a54b9075")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnimeTracker.Importer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimeTracker.Importer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

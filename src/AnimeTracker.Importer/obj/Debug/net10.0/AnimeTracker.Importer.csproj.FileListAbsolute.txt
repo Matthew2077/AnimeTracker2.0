@@ -12,3 +12,4 @@
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.pdb
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.genruntimeconfig.cache
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/ref/AnimeTracker.Importer.dll
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Importer/obj/Debug/net10.0/AnimeTracker.Importer.sourcelink.json
