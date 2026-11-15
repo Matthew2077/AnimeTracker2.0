@@ -17,6 +17,16 @@ export async function watchingView() {
         progress(e.watchedUnits, e.totalUnits),
         h('div', { class: 'actions' },
           e.externalUrl && h('a', { class: 'btn primary', href: e.externalUrl, target: '_blank', rel: 'noopener noreferrer' }, 'Open'),
+          e.watchedUnits > 0 && h('button', {
+            class: 'btn',
+            onClick: async () => {
+              try {
+                const upd = await api.decrement(e.id);
+                list = list.map((x) => (x.id === upd.id ? upd : x));
+                render();
+              } catch (err) { alert(err.message); }
+            },
+          }, '−1'),
           h('button', {
             class: 'btn',
             onClick: async () => {

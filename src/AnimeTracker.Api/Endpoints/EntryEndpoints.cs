@@ -129,5 +129,21 @@ public static class EntryEndpoints
             await db.SaveChangesAsync();
             return Results.Ok(entry.ToDto());
         });
+
+        g.MapPost("/{id:int}/decrement", async (int id, AppDbContext db) =>
+        {
+            var entry = await db.Entries.IncludeAll().FirstOrDefaultAsync(e => e.Id == id);
+            if (entry is null) return Results.NotFound();
+            try
+            {
+                EntryRules.Decrement(entry);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return Results.Conflict(new { error = ex.Message });
+            }
+            await db.SaveChangesAsync();
+            return Results.Ok(entry.ToDto());
+        });
     }
 }

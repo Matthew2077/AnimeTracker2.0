@@ -50,7 +50,15 @@ a.card:hover { transform: translateY(-3px); }
 
 .back { color: var(--muted); display: inline-block; margin-bottom: 16px; }
 .detail-head { display: flex; gap: 24px; align-items: flex-start; }
-.detail-head .cover { width: 180px; border-radius: var(--radius); aspect-ratio: 2 / 3; object-fit: cover; background: var(--panel2); }
+.detail-head .cover { width: 180px; border-radius: var(--radius); aspect-ratio: 2 / 3; object-fit: cover; background: var(--panel2); flex-shrink: 0; }
+.detail-title { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.detail-title h1 { margin: 0; }
+.form { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field > span { font-size: 13px; color: var(--muted); }
+.form input[type=text], .form textarea, .form select { width: 100%; }
+.form textarea { resize: vertical; min-height: 72px; }
+.form input[type=file] { padding: 6px 0; border: none; background: transparent; }
 .entries { display: flex; flex-direction: column; gap: 10px; }
 .entry { display: grid; grid-template-columns: 70px 1fr auto; gap: 14px; align-items: center; background: var(--panel); border-radius: var(--radius); padding: 10px; }
 .entry img { width: 70px; height: 100px; object-fit: cover; border-radius: 8px; background: var(--panel2); }

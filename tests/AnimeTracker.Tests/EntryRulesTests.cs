@@ -81,4 +81,45 @@ public class EntryRulesTests
         var e = MakeEntry(EntryStatus.Completed, 12);
         Assert.Throws<InvalidOperationException>(() => EntryRules.Increment(e));
     }
+
+    [Fact]
+    public void Decrement_Ongoing_DecreasesWatched()
+    {
+        var e = MakeEntry(EntryStatus.Ongoing, 5);
+        EntryRules.Decrement(e);
+        Assert.Equal(4, e.WatchedUnits);
+        Assert.Equal(EntryStatus.Ongoing, e.Status);
+    }
+
+    [Fact]
+    public void Decrement_Ongoing_ToZero_StaysOngoing()
+    {
+        var e = MakeEntry(EntryStatus.Ongoing, 1);
+        EntryRules.Decrement(e);
+        Assert.Equal(0, e.WatchedUnits);
+        Assert.Equal(EntryStatus.Ongoing, e.Status);
+    }
+
+    [Fact]
+    public void Decrement_Ongoing_AtZero_Throws()
+    {
+        var e = MakeEntry(EntryStatus.Ongoing, 0);
+        Assert.Throws<InvalidOperationException>(() => EntryRules.Decrement(e));
+    }
+
+    [Fact]
+    public void Decrement_OnCompleted_Throws()
+    {
+        var e = MakeEntry(EntryStatus.Completed, 12);
+        Assert.Throws<InvalidOperationException>(() => EntryRules.Decrement(e));
+    }
+
+    [Theory]
+    [InlineData(EntryStatus.Planned)]
+    [InlineData(EntryStatus.Dropped)]
+    public void Decrement_NonOngoing_Throws(EntryStatus status)
+    {
+        var e = MakeEntry(status, 3);
+        Assert.Throws<InvalidOperationException>(() => EntryRules.Decrement(e));
+    }
 }

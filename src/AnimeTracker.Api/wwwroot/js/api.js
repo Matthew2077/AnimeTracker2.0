@@ -23,11 +23,29 @@ const qs = (p) => {
 
 export const api = {
   stats: () => request('GET', '/api/stats'),
+  genres: () => request('GET', '/api/genres'),
   seriesList: (filters) => request('GET', `/api/series?${qs(filters)}`),
+  randomSeries: () => request('GET', '/api/series/random'),
   series: (id) => request('GET', `/api/series/${id}`),
+  updateSeries: (id, body) => request('PUT', `/api/series/${id}`, body),
   entries: (id) => request('GET', `/api/series/${id}/entries`),
   watching: () => request('GET', '/api/watching'),
   increment: (id) => request('POST', `/api/entries/${id}/increment`),
+  decrement: (id) => request('POST', `/api/entries/${id}/decrement`),
   setStatus: (id, status) => request('POST', `/api/entries/${id}/status`, { status }),
   reorder: (id, body) => request('POST', `/api/series/${id}/reorder`, body),
+  upload: async (file) => {
+    const fd = new FormData();
+    fd.append('file', file);
+    const res = await fetch('/api/uploads', { method: 'POST', body: fd });
+    if (!res.ok) {
+      let msg = `${res.status} ${res.statusText}`;
+      try {
+        const j = await res.json();
+        msg = j.error ?? msg;
+      } catch { /* not JSON */ }
+      throw new Error(msg);
+    }
+    return res.json();
+  },
 };

@@ -49,4 +49,15 @@ public static class EntryRules
             entry.UpdatedAt = now ?? DateTime.UtcNow;
         }
     }
+
+    public static void Decrement(Entry entry, DateTime? now = null)
+    {
+        if (entry.Status != EntryStatus.Ongoing)
+            throw new InvalidOperationException("Only ongoing entries can be decremented.");
+        if (entry.WatchedUnits <= 0)
+            throw new InvalidOperationException("No watched units to remove.");
+
+        entry.WatchedUnits--;
+        entry.UpdatedAt = now ?? DateTime.UtcNow;
+    }
 }

@@ -12,8 +12,8 @@ public static class SeriesEndpoints
     {
         var g = app.MapGroup("/api/series");
 
-        // GET /api/series?q=&status=&sort=asc|desc
-        g.MapGet("/", async (AppDbContext db, string? q, EntryStatus? status, string? sort) =>
+        // GET /api/series?q=&status=&genreId=&sort=asc|desc
+        g.MapGet("/", async (AppDbContext db, string? q, EntryStatus? status, int? genreId, string? sort) =>
         {
             var query = db.Series.Include(s => s.Genre).Include(s => s.Entries).AsQueryable();
 
@@ -28,11 +28,28 @@ public static class SeriesEndpoints
             if (status is { } st)
                 query = query.Where(s => s.Entries.Any(e => e.Status == st));
 
+            if (genreId is { } gid)
+                query = query.Where(s => s.GenreId == gid);
+
             var list = await query.ToListAsync();
             var ordered = string.Equals(sort, "desc", StringComparison.OrdinalIgnoreCase)
                 ? list.OrderByDescending(s => s.Name, StringComparer.OrdinalIgnoreCase)
                 : list.OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase);
             return ordered.Select(s => s.ToSummary()).ToList();
+        });
+
+        // Literal route before /{id:int}
+        g.MapGet("/random", async (AppDbContext db) =>
+        {
+            var id = await db.Series
+                .OrderBy(_ => EF.Functions.Random())
+                .Select(s => (int?)s.Id)
+                .FirstOrDefaultAsync();
+            if (id is null) return Results.NotFound();
+
+            var s = await db.Series.Include(x => x.Genre).Include(x => x.Entries)
+                .FirstAsync(x => x.Id == id.Value);
+            return Results.Ok(s.ToSummary());
         });
 
         g.MapGet("/{id:int}", async (int id, AppDbContext db) =>
