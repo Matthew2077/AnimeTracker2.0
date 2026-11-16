@@ -1,5 +1,6 @@
 import { api } from '../api.js';
 import { h, img, progress, badge } from '../ui.js';
+import { openCreateChooser, openCreateSeriesModal, openCreateEntryModal } from '../modals.js';
 
 const KEY = 'at.seriesFilters';
 const filters = loadFilters();
@@ -89,7 +90,34 @@ export async function seriesView() {
           alert(/\b404\b/.test(err.message) ? 'No series in the library yet.' : err.message);
         }
       },
-    }, 'Random'));
+    }, 'Random'),
+    h('button', {
+      class: 'btn primary',
+      type: 'button',
+      title: 'Add series or entry',
+      onClick: () => {
+        openCreateChooser({
+          onSeries: () => openCreateSeriesModal({
+            genres,
+            onCreated: (s) => { location.hash = `#/series/${s.id}`; },
+          }),
+          onEntry: async () => {
+            let list = [];
+            try {
+              list = await api.seriesList({ sort: 'asc' });
+            } catch (err) {
+              alert(err.message);
+              return;
+            }
+            openCreateEntryModal({
+              genres,
+              seriesList: list,
+              onCreated: (e) => { location.hash = `#/series/${e.seriesId}`; },
+            });
+          },
+        });
+      },
+    }, '+'));
 
   await load();
   return h('div', {},

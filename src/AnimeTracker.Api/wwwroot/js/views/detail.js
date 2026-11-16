@@ -1,5 +1,6 @@
 import { api } from '../api.js';
 import { h, img, progress, badge, statusBadge, label, GROUPS, STATUSES } from '../ui.js';
+import { openCreateEntryModal } from '../modals.js';
 
 export async function detailView(id) {
   const [initialSeries, initial, genres] = await Promise.all([api.series(id), api.entries(id), api.genres()]);
@@ -50,13 +51,41 @@ export async function detailView(id) {
         h('button', { class: 'btn', title: 'Move down', disabled: i === items.length - 1, onClick: () => act(() => move(e, items, i, 1)) }, '▼')));
   }
 
+  function openAddEntry() {
+    openCreateEntryModal({
+      genres,
+      seriesList: [{ id, name: series.name }],
+      preselectedSeriesId: id,
+      onCreated: async () => {
+        try {
+          const [s, entries] = await Promise.all([api.series(id), api.entries(id)]);
+          series = s;
+          list = entries;
+          renderHead();
+          render();
+        } catch (err) {
+          alert(err.message);
+        }
+      },
+    });
+  }
+
   function renderEntries() {
+    const addBtn = h('button', {
+      class: 'btn primary', type: 'button',
+      onClick: openAddEntry,
+    }, 'Add entry');
     const blocks = Object.keys(GROUPS).map((g) => {
       const items = list.filter((e) => e.mediaGroup === g).sort((a, b) => a.sortOrder - b.sortOrder);
       if (!items.length) return null;
       return h('section', {}, h('h2', {}, GROUPS[g]), h('div', { class: 'entries' }, items.map((e, i) => entryRow(e, i, items))));
     }).filter(Boolean);
-    sections.replaceChildren(...(blocks.length ? blocks : [h('p', { class: 'muted' }, 'No entries yet.')]));
+    const body = blocks.length
+      ? blocks
+      : [h('p', { class: 'muted' }, 'No entries yet.')];
+    sections.replaceChildren(
+      h('div', { class: 'section-head' }, addBtn),
+      ...body);
   }
 
   function renderHead() {
