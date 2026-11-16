@@ -31,6 +31,7 @@ export const api = {
   updateSeries: (id, body) => request('PUT', `/api/series/${id}`, body),
   entries: (id) => request('GET', `/api/series/${id}/entries`),
   createEntry: (body) => request('POST', '/api/entries', body),
+  updateEntry: (id, body) => request('PUT', `/api/entries/${id}`, body),
   watching: () => request('GET', '/api/watching'),
   increment: (id) => request('POST', `/api/entries/${id}/increment`),
   decrement: (id) => request('POST', `/api/entries/${id}/decrement`),

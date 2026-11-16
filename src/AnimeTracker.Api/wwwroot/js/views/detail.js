@@ -1,6 +1,6 @@
 import { api } from '../api.js';
 import { h, img, progress, badge, statusBadge, label, GROUPS, STATUSES } from '../ui.js';
-import { openCreateEntryModal } from '../modals.js';
+import { openCreateEntryModal, openEditEntryModal } from '../modals.js';
 
 export async function detailView(id) {
   const [initialSeries, initial, genres] = await Promise.all([api.series(id), api.entries(id), api.genres()]);
@@ -23,6 +23,36 @@ export async function detailView(id) {
     render();
   }
 
+  async function refreshSeries() {
+    const [s, entries] = await Promise.all([api.series(id), api.entries(id)]);
+    series = s;
+    list = entries;
+    renderHead();
+    render();
+  }
+
+  function openEditEntry(e) {
+    act(async () => {
+      const allSeries = await api.seriesList({ sort: 'asc' });
+      openEditEntryModal({
+        entry: e,
+        genres,
+        seriesList: allSeries,
+        onSaved: async (updated) => {
+          if (updated.seriesId !== id) {
+            location.hash = `#/series/${updated.seriesId}`;
+            return;
+          }
+          try {
+            await refreshSeries();
+          } catch (err) {
+            alert(err.message);
+          }
+        },
+      });
+    });
+  }
+
   function entryRow(e, i, items) {
     return h('div', { class: 'entry' },
       img(e.imageFile, e.title),
@@ -33,6 +63,7 @@ export async function detailView(id) {
         h('p', { class: 'small' }, `${e.watchedUnits}/${e.totalUnits} ${label(e.unitLabel)}`),
         progress(e.watchedUnits, e.totalUnits)),
       h('div', { class: 'actions' },
+        h('button', { class: 'btn', type: 'button', onClick: () => openEditEntry(e) }, 'Edit'),
         e.externalUrl && h('a', { class: 'btn primary', href: e.externalUrl, target: '_blank', rel: 'noopener noreferrer' }, 'Open'),
         e.status === 'Ongoing' && e.watchedUnits > 0 &&
           h('button', { class: 'btn', onClick: () => act(async () => replace(await api.decrement(e.id))) }, '−1'),
@@ -58,11 +89,7 @@ export async function detailView(id) {
       preselectedSeriesId: id,
       onCreated: async () => {
         try {
-          const [s, entries] = await Promise.all([api.series(id), api.entries(id)]);
-          series = s;
-          list = entries;
-          renderHead();
-          render();
+          await refreshSeries();
         } catch (err) {
           alert(err.message);
         }

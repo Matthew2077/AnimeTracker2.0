@@ -153,7 +153,7 @@
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/wddbefg4pg-{0}-v0ob51mo5r-v0ob51mo5r.gz
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/f3y9xbn7s3-{0}-zrwu4zvby4-zrwu4zvby4.gz
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/wt7d0q23de-{0}-7d2wm1uuzm-7d2wm1uuzm.gz
-/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/w5ejehcvjh-{0}-bizxja3uq3-bizxja3uq3.gz
-/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/k7gh0bd6fq-{0}-3naghjyd18-3naghjyd18.gz
-/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/zii027s2dj-{0}-0kcmumpk2r-0kcmumpk2r.gz
 /home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/eh80gw022l-{0}-hk0nrd8lfw-hk0nrd8lfw.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/w5ejehcvjh-{0}-u0zydxfnay-u0zydxfnay.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/k7gh0bd6fq-{0}-0p11q6pkk6-0p11q6pkk6.gz
+/home/matteo/Desktop/Projects/AnimeTracker2.0/src/AnimeTracker.Api/obj/Debug/net10.0/compressed/zii027s2dj-{0}-vb858w5mdz-vb858w5mdz.gz
