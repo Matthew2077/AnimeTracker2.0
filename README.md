@@ -11,8 +11,7 @@ Keep every series, season, movie, OVA and volume in one place, and always know w
 ![JavaScript](https://img.shields.io/badge/Frontend-Vanilla%20JS-F7DF1E?logo=javascript&logoColor=black)
 ![Tests](https://img.shields.io/badge/tests-xUnit-512BD4)
 
-<!-- Add a hero screenshot or GIF here -->
-<!-- ![AnimeTracker 2.0](docs/screenshots/home.png) -->
+![AnimeTracker 2.0](docs/screenshots/home.png)
 
 </div>
 
@@ -23,10 +22,6 @@ Keep every series, season, movie, OVA and volume in one place, and always know w
 AnimeTracker 2.0 is a small web app that runs on your own machine and keeps track of the anime and manga you are watching, reading, or planning to get to. Everything is stored locally in a single SQLite database, with no accounts, no cloud and no tracking.
 
 Series are the main building block. Each series groups all of its related entries (seasons, movies, OVAs, manga, light novels), so a whole franchise lives in one place instead of being scattered across a flat list.
-
-## 💡 Why I built it
-
-<!-- TODO: fill in before the final version -->
 
 ---
 
